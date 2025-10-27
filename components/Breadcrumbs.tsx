@@ -1,0 +1,1 @@
+import Link from 'next/link'; export function Breadcrumbs({items}:{items:{label:string,href?:string}[]}){return <div className='text-sm text-gray-500'>{items.map((i,idx)=><span key={idx}>{i.href?<Link className='hover:underline' href={i.href}>{i.label}</Link>:<span>{i.label}</span>}{idx<items.length-1 && <span className='mx-2'>/</span>}</span>)}</div>;}

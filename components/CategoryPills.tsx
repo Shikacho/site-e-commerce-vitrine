@@ -1,0 +1,1 @@
+import Link from 'next/link'; export function CategoryPills({categories}:{categories:{slug:string,label:string}[]}){return <div className='flex flex-wrap gap-2'>{categories.map(c=><Link key={c.slug} href={`/shop/${c.slug}`} className='px-3 py-1 rounded-full bg-brand-100 hover:bg-brand-200 text-sm text-brand-800'>{c.label}</Link>)}</div>; }
