@@ -7,6 +7,9 @@ body { @apply bg-white text-ink; }
 .card { @apply bg-white rounded-2xl shadow-soft border border-gray-100; }
 .badge { @apply px-3 py-1 rounded-full text-xs; }
 .btn { @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-medium transition; }
-.btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-soft; }
-.btn-outline { @apply btn border border-gray-300 hover:bg-gray-50; }
-.small { @apply text-sm text-gray-600; }
+
+/* avant: bg-brand-600 ... */
+.btn-primary { @apply btn bg-slate-950 text-white hover:bg-slate-900 shadow-soft; }
+
+/* avant: border gray… */
+.btn-outline  { @apply btn border border-slate-300 text-slate-800 hover:bg-slate-100; }
