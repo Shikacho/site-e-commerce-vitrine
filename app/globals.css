@@ -33,3 +33,24 @@ body { @apply bg-white text-ink; }
 .error {
   @apply text-xs text-red-600 mt-1;
 }
+
+.frame {
+  @apply bg-white rounded-2xl border border-slate-200 shadow-soft;
+}
+
+.frame-image {
+  position: relative;
+  background: #ffffff;
+  border: 12px solid #ffffff;  
+  outline: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+.section-framed {
+  position: relative;
+  border-top: 3px double #e2e8f0;
+  border-bottom: 3px double #e2e8f0;
+  background:
+    linear-gradient(#f8fafc, #fff);
+}
