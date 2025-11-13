@@ -23,17 +23,17 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold tracking-wide text-slate-300">Aide</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#" className="text-slate-300 hover:text-white transition">FAQ</a></li>
-            <li><a href="#" className="text-slate-300 hover:text-white transition">Livraison & retours</a></li>
-            <li><a href="#" className="text-slate-300 hover:text-white transition">Suivi de commande</a></li>
+            <li><Link href="/faq" className="text-slate-300 hover:text-white transition">FAQ</Link></li>
+            <li><Link href="/livraison-retours" className="text-slate-300 hover:text-white transition">Livraison & retours</Link></li>
+            <li><Link href="/suivi-commande" className="text-slate-300 hover:text-white transition">Suivi de commande</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-sm font-semibold tracking-wide text-slate-300">Légal</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#" className="text-slate-300 hover:text-white transition">CGU</a></li>
-            <li><a href="#" className="text-slate-300 hover:text-white transition">Confidentialité</a></li>
+            <li><Link href="/cgu" className="text-slate-300 hover:text-white transition">CGU</Link></li>
+            <li><Link href="/confidentialite" className="text-slate-300 hover:text-white transition">Confidentialité</Link></li>
           </ul>
         </div>
       </div>
@@ -43,8 +43,8 @@ export function Footer() {
           <div>© {new Date().getFullYear()} Mur en Couleur — Tous droits réservés.</div>
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline">FR</span>
-            <a href="#" className="hover:text-white transition">Contact</a>
-            <a href="#" className="hover:text-white transition">Politique de retour</a>
+            <Link href="/contact" className="hover:text-white transition">Contact</Link>
+            <Link href="/politique-retour" className="hover:text-white transition">Politique de retour</Link>
           </div>
         </div>
       </div>
