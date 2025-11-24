@@ -32,7 +32,7 @@ export default function AboutPage() {
             </div>
 
             <div className="overflow-hidden rounded-xl">
-              <img src="/images/hero-wall.jpg" alt="Mur de cadres" className="w-full h-auto" />
+              <img src="/images/cadre-photo-personnalise-01-HD.jpg" alt="Mur de cadres" className="w-full h-auto" />
             </div>
           </div>
         </div>
