@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Suspense } from "react";           
-import { CategoryPills } from "@/components/CategoryPills";
+import dynamic from "next/dynamic";
 import { categories } from "@/lib/data";
+
+// charge CategoryPills uniquement côté client
+const CategoryPillsClient = dynamic(
+  () => import("@/components/CategoryPills").then(m => m.CategoryPills),
+  { ssr: false }
+);
 
 export default function HomePage() {
   return (
@@ -10,9 +15,7 @@ export default function HomePage() {
       <div className="container-max pt-16 pb-10">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Votre galerie, chez vous.
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Votre galerie, chez vous.</h1>
             <p className="mt-4 text-lg text-gray-700">
               Tableaux contemporains prêts à accrocher — formats A4 à 70×100, finitions premium, expédition rapide.
             </p>
@@ -28,9 +31,7 @@ export default function HomePage() {
             </p>
 
             <div className="mt-8">
-              <Suspense fallback={<div className="h-8" />}>
-                <CategoryPills categories={categories} to="/shop" />
-              </Suspense>
+              <CategoryPillsClient categories={categories} to="/shop" />
             </div>
           </div>
 
