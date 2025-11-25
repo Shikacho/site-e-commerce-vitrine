@@ -5,7 +5,6 @@ import { categories } from "@/lib/data";
 
 export default function HomePage() {
   return (
-  
     <section className="bg-white">
       <div className="container-max pt-16 pb-10">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -22,6 +21,11 @@ export default function HomePage() {
               </Link>
               <Link href="/about" className="btn-outline">À propos</Link>
             </div>
+
+            <p className="mt-2 text-xs text-slate-500">
+              Démonstration / portfolio — site d’exemple, aucune vente réelle.
+            </p>
+
             <p className="small mt-4">Impression premium · Emballage protégé · Retours sous 30 jours</p>
             <div className="mt-8">
               <CategoryPills categories={categories} />
@@ -29,11 +33,11 @@ export default function HomePage() {
           </div>
 
           <div className="card p-0 overflow-hidden border-0 bg-white">
-          <img
-            src="/images/cadre-photo-personnalise-01-HD.jpg"
-            alt="Mur de cadres, galerie neutre"
-            className="w-full h-auto block bg-white"
-          />  
+            <img
+              src="/images/cadre-photo-personnalise-01-HD.jpg"
+              alt="Mur de cadres, galerie neutre"
+              className="w-full h-auto block bg-white"
+            />
           </div>
         </div>
       </div>
