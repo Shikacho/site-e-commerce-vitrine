@@ -1,13 +1,9 @@
+"use client"; // ⬅️ tout le fichier Home devient un composant client
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import dynamic from "next/dynamic";
+import { CategoryPills } from "@/components/CategoryPills"; // import direct OK en client
 import { categories } from "@/lib/data";
-
-// charge CategoryPills uniquement côté client
-const CategoryPillsClient = dynamic(
-  () => import("@/components/CategoryPills").then(m => m.CategoryPills),
-  { ssr: false }
-);
 
 export default function HomePage() {
   return (
@@ -25,13 +21,11 @@ export default function HomePage() {
               </Link>
               <Link href="/about" className="btn-outline">À propos</Link>
             </div>
-
             <p className="mt-2 text-xs text-slate-500">
               Démonstration / portfolio — site d’exemple, aucune vente réelle.
             </p>
-
             <div className="mt-8">
-              <CategoryPillsClient categories={categories} to="/shop" />
+              <CategoryPills categories={categories} to="/shop" />
             </div>
           </div>
 
