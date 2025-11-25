@@ -1,8 +1,6 @@
-"use client"; // ⬅️ tout le fichier Home devient un composant client
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { CategoryPills } from "@/components/CategoryPills"; // import direct OK en client
+import { CategoryPills } from "@/components/CategoryPills";
 import { categories } from "@/lib/data";
 
 export default function HomePage() {
@@ -11,7 +9,9 @@ export default function HomePage() {
       <div className="container-max pt-16 pb-10">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Votre galerie, chez vous.</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Votre galerie, chez vous.
+            </h1>
             <p className="mt-4 text-lg text-gray-700">
               Tableaux contemporains prêts à accrocher — formats A4 à 70×100, finitions premium, expédition rapide.
             </p>

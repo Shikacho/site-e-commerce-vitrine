@@ -1,20 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
 type Cat = { slug: string; label: string };
 
-export function CategoryPills({ categories, to = "/shop" }: { categories: Cat[]; to?: string }) {
-  const sp = useSearchParams();
-
-  const urlWith = (slug?: string) => {
-    const params = new URLSearchParams(sp.toString());
-    if (!slug) params.delete("category"); else params.set("category", slug);
-    const qs = params.toString();
-    return `${to}${qs ? `?${qs}` : ""}`;
-  };
-
+export function CategoryPills({
+  categories,
+  to = "/shop",
+}: {
+  categories: Cat[];
+  to?: string;
+}) {
   const base =
     "px-3 py-1.5 rounded-full text-sm transition outline-none " +
     "border border-slate-300 bg-transparent text-slate-800 " +
@@ -23,11 +19,11 @@ export function CategoryPills({ categories, to = "/shop" }: { categories: Cat[];
 
   return (
     <div className="flex flex-wrap gap-2">
-      <Link href={urlWith(undefined)} className={base}>
+      <Link href={to} className={base}>
         Tout
       </Link>
       {categories.map((c) => (
-        <Link key={c.slug} href={urlWith(c.slug)} className={base}>
+        <Link key={c.slug} href={`${to}?category=${encodeURIComponent(c.slug)}`} className={base}>
           {c.label}
         </Link>
       ))}
