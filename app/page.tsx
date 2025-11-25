@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Suspense } from "react";           
 import { CategoryPills } from "@/components/CategoryPills";
 import { categories } from "@/lib/data";
 
@@ -26,9 +27,10 @@ export default function HomePage() {
               Démonstration / portfolio — site d’exemple, aucune vente réelle.
             </p>
 
-            <p className="small mt-4">Impression premium · Emballage protégé · Retours sous 30 jours</p>
             <div className="mt-8">
-              <CategoryPills categories={categories} />
+              <Suspense fallback={<div className="h-8" />}>
+                <CategoryPills categories={categories} to="/shop" />
+              </Suspense>
             </div>
           </div>
 
